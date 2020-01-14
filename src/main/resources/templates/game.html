@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+        <meta charset="UTF-8">
+        <title>Game</title>
+</head>
+<body>
+<form action="/Game" method="post">
+    <p>攻撃しましょう！</p>
+    <br><br>
+
+    <p>縦</p>
+    <input type="radio" name="width" value="0" checked="checked">0
+    <input type="radio" name="width" value="1">1
+    <input type="radio" name="width" value="2">2
+    <input type="radio" name="width" value="3">3
+    <input type="radio" name="width" value="4">4
+    <p>横</p>
+    <input type="radio" name="length" value="0" checked="checked">a
+    <input type="radio" name="length" value="1">b
+    <input type="radio" name="length" value="2">c
+    <input type="radio" name="length" value="3">d
+    <input type="radio" name="length" value="4">e
+    <br><br>
+    <button type="submit">決定</button>
+</form>
+
+<p>自分の海域</p>
+<table border="1">
+    <th></th><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th>
+    <tr  th:each="pl:${player}">
+        <th th:text="${plStat.index}"></th>
+        <td th:text="${pl[0].getLabel()}"></td>
+        <td th:text="${pl[1].getLabel()}"></td>
+        <td th:text="${pl[2].getLabel()}"></td>
+        <td th:text="${pl[3].getLabel()}"></td>
+        <td th:text="${pl[4].getLabel()}"></td>
+    </tr>
+</table>
+
+<p>敵の海域</p>
+<table border="1">
+    <th></th><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th>
+    <tr  th:each="cp:${cpu}">
+        <th th:text="${cpStat.index}"></th>
+        <td th:text="${cp[0].getLabel()}"></td>
+        <td th:text="${cp[1].getLabel()}"></td>
+        <td th:text="${cp[2].getLabel()}"></td>
+        <td th:text="${cp[3].getLabel()}"></td>
+        <td th:text="${cp[4].getLabel()}"></td>
+    </tr>
+</table>
+
+
+
+</body>
+</html>

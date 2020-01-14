@@ -1,0 +1,81 @@
+<div  th:each="player:${temp}">
+    [[${player}]]
+</div >
+
+<div th:each="player2:${temp2}">
+    [[${player2[0]}]]
+    [[${player2[1]}]]
+</div>
+
+<div th:each="pl:${player}">
+    [[${pl[0]}]]
+    [[${pl[1]}]]
+</div>
+
+
+<p>あなたの陣地</p>
+<table border="1">
+    <tr>
+        <th></th>   <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th>
+    </tr>
+    <tr>
+        <th>1</th>  <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <th>2</th>  <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <th>3</th>  <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <th>4</th>  <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <th>5</th>  <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+</table>
+
+<p>CPUの陣地</p>
+<table border="1">
+    <tr>
+        <th></th>   <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th>
+    </tr>
+    <tr>
+        <th>1</th>  <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <th>2</th>  <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <th>3</th>  <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <th>4</th>  <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <th>5</th>  <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+</table>
+
+
+//        String temp[]={"a","b","c","d"};
+//        model.addAttribute("temp",temp);
+//
+//        String temp2[][]={{"a","b"},{"c","d"}};
+//        model.addAttribute("temp2",temp2);
+
+        //String inf[][]={{"EFieldInfo.ship","EFieldInfo.ship"},{"EFieldInfo.breaked","EFieldInfo.empty"}};
+
+
+
+        <p>敵の海域</p>
+        <table border="1" th:each="cp:${cpu}">
+            <tr>
+                <td>[[${cp[0].getLabel()}]]</td>
+                <td>[[${cp[1].getLabel()}]]</td>
+                <td>[[${cp[2].getLabel()}]]</td>
+                <td>[[${cp[3].getLabel()}]]</td>
+                <td>[[${cp[4].getLabel()}]]</td>
+            </tr>
+        </table>
+
